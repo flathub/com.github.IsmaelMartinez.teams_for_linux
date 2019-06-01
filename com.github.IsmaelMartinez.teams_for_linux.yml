@@ -22,7 +22,6 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=XDG_CURRENT_DESKTOP=Unity
   - --talk-name=org.gtk.Notifications
-  - --talk-name=org.kde.StatusNotifierWatcher
 modules:
   - name: nodejs
     sources:
