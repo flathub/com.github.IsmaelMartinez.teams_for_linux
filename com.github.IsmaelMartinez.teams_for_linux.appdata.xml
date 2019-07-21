@@ -14,6 +14,22 @@
   <url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
   <launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
   <releases>
+    <release version="0.4.0" date="2019-07-19">
+      <description>
+        <p>Using gitflow from now on for releases (having master and develop branches) (Thanks to @julian-alarcon)</p>
+        <p>#149 Re-implementing the spellchecker to improve performance. (PR #152, #155 and #163)</p>
+        <p>#123 Is now possible as the main issue was with the spellchecker (issue #149)</p>
+        <p>#41 Teams-for-linux now also available in Flatpak! (Thanks to @gabops)</p>
+        <p>#99 Fixing the cursor in snap (PR #168)</p>
+        <p>#61 Improving the screen-share quality by adding a white end to the browserviews. This is a chrome issue that basically doesn't trigger then the antialiasing. Strange but it works! (PR #165)</p>
+        <p>#89 Adding the basic part for the xdg-open. This might need a few improvements as it is currently quite difficult to test. (PR #170)</p>
+        <p>#162 Improving the documentation for snap as people keep coming back reporting camera not working (Thanks @julian-alarcon) (PR in #167)</p>
+        <p>#171 blank screen issue. Workaround found and documented (Thanks to @sant123 for documenting and the others for finding/testing the solution!) (PR #178)</p>
+        <p>#176 Fixing the multiple icons in dock (Thanks to @lkms) (PR #179)</p>
+        <p>#98 Fixing the loop when launching that some people where experiencing.</p>
+        <p>#109 and #107 Improving the handling of "about:blank" links (mainly connectors and preview images) (Thanks to @HarlemSquirrel) (PRs #131 and #172)</p>
+      </description>
+    </release>
     <release version="0.3.0" date="2019-05-27">
       <description>
         <p>Using gitflow from now on for releases (having master and develop branches) (Thanks to @julian-alarcon)</p>
