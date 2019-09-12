@@ -34,6 +34,8 @@ modules:
       - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
       - mv ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - desktop-file-edit --set-key Icon --set-value "com.github.IsmaelMartinez.teams_for_linux" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - find /app/share/icons -type f -name *.png -exec rename teams-for-linux.png ${FLATPAK_ID}.png '{}' \;
     sources:
       - type: file
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v0.7.0/teams-for-linux_0.7.0_amd64.deb
