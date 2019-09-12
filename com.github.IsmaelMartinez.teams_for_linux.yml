@@ -23,57 +23,15 @@ finish-args:
   - --env=XDG_CURRENT_DESKTOP=Unity
   - --talk-name=org.gtk.Notifications
 modules:
-  - name: nodejs
-    sources:
-      - type: archive
-        url: https://nodejs.org/dist/v10.15.3/node-v10.15.3.tar.gz
-        sha256: db460a63d057ac015b75bb6a879fcbe2fefaaf22afa4b6f6445b9db61ce2270d
-    cleanup:
-      - "*"
-
-  - name: yarn
-    buildsystem: simple
-    build-commands:
-      - mkdir -p /app/share/yarn/
-      - cp -a * /app/share/yarn/
-      - ln -s /app/share/yarn/bin/yarn /app/bin/yarn
-      - ln -s /app/share/yarn/bin/yarnpkg /app/bin/yarnpkg
-    sources:
-      - type: archive
-        url: https://github.com/yarnpkg/yarn/releases/download/v1.17.3/yarn-v1.17.3.tar.gz
-        sha256: e3835194409f1b3afa1c62ca82f561f1c29d26580c9e220c36866317e043c6f3
-    cleanup:
-      - "*"
-
   - name: teams-for-linux
     buildsystem: simple
     build-commands:
-      - yarn --offline --ignore-scripts install
-      - yarn --offline --ignore-scripts run dist:linux dir -c.npmRebuild=false
-      - cp -r dist/linux-unpacked /app/teams-for-linux
-      - ln -s /app/teams-for-linux/teams-for-linux /app/bin/teams-for-linux
-      - | 
-          for icon in $(ls --ignore '1024*' -v1 build/icons/)
-          do
-            mkdir -p /app/share/icons/hicolor/$(basename -s '.png' $icon)/apps/
-            install -Dm644 build/icons/$icon /app/share/icons/hicolor/$(basename -s '.png' $icon)/apps/com.github.IsmaelMartinez.teams_for_linux.png
-          done
-      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
-      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.desktop -t /app/share/applications
-    build-options:
-      env:
-        ELECTRON_CACHE: /run/build/teams-for-linux/electron-cache/
-        electron_config_cache: /run/build/teams-for-linux/electron-cache/
-        PATH: /app/bin:/run/build/teams-for-linux/node_modules/.bin:/bin
+      - ar x teams-for-linux_0.7.0_amd64.deb
+      - tar -xf data.tar.xz
+      - cp -r ./opt/* /app/
+      - cp -r ./usr/share/* /app/share/
+      - ln -s /app/teams-for-linux/teams-for-linux /app/bin
     sources:
-      - generated-sources.json
-      - type: git
-        url: https://github.com/IsmaelMartinez/teams-for-linux.git
-        tag: v0.7.0
       - type: file
-        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
-      - type: file
-        path: com.github.IsmaelMartinez.teams_for_linux.desktop
-      - type: file
-        dest-filename: .yarnrc
-        path: yarnrc
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v0.7.0/teams-for-linux_0.7.0_amd64.deb
+        sha256: de32623f5313038f9858035ae392f0d0413dda6a27ac4531f7c384e34d51f8ad
