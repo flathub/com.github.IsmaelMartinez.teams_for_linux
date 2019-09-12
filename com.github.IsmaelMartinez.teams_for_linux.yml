@@ -31,7 +31,10 @@ modules:
       - cp -r ./opt/* /app/
       - cp -r ./usr/share/* /app/share/
       - ln -s /app/teams-for-linux/teams-for-linux /app/bin
+      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
     sources:
       - type: file
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v0.7.0/teams-for-linux_0.7.0_amd64.deb
         sha256: de32623f5313038f9858035ae392f0d0413dda6a27ac4531f7c384e34d51f8ad
+      - type: file
+        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
