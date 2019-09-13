@@ -14,6 +14,28 @@
   <url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
   <launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
   <releases>
+    <release version="0.7.0" date="2019-08-19">
+      <description>
+        <p>Because #217, you need to clear you config folder before your 1st login (config folder locations). This is not necessary if you are moving from version 0.6.6 or higher.</p>
+        <p>This release is been mostly concentrated on bug fixes and making this a bit more stable.</p>
+        <ul>
+          <li>Fix #220. Electron's getLocale, and Chromium's l10n_util, can return the language code in the IETF BCP 47 format (en-US) instead of the ISO 15897 format (en_US). Hunspell, the dictionaries included with this project, and the JavaScript code here assumes the ISO 15897 format, so this hotfix converts what getLocale returns. (#234) (97eb15f) Thanks to @pnickerson-cashstar</li>
+          <li>Add flatpak to configuration directory list (#232) (afbb725) Thanks to @agates</li>
+          <li>Fix #208. Increasing the electron-builder (#231) (555e364)</li>
+          <li>Fix #221: updating readme with a link to AppImageLauncher (#226) (4fce0df) Thanks to @orange-buffalo</li>
+          <li>Fix #171. Can't open Microsoft Teams - blank screen (#218) (f0242d2) Thanks to @inglor and @basaas</li>
+          <li>Fix #204. Updating default user agent string (#217) (952c55a) Thanks to @whofferbert</li>
+          <li>Feature #185 Adding the ability to toogle fullscreen f11 (#216) (adeec1d) Thanks to @rt3norio</li>
+          <li>Update KNOWN_ISSUES to reference cache folder (#171) (#210) (36af526) Thanks to @skyghis</li>
+          <li>Fix #182. Better handle external requests in new windows (#206) (599e140) Thanks to @HarlemSquirrel</li>
+        </ul>
+        <p>Extras</p>
+        <ul>
+        <li>Special thanks also to all the people that reported issues, tested them, fixed them, improved the documentation, and, in general, helped making this a bit more stable. All of this will not be possible with your contributions.</li>
+        </ul>
+        <p>Apologies if I have missed anyone.</p>
+      </description>
+    </release>
     <release version="0.4.0" date="2019-07-19">
       <description>
         <p>Using gitflow from now on for releases (having master and develop branches) (Thanks to @julian-alarcon)</p>
