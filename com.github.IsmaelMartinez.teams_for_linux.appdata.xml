@@ -14,6 +14,46 @@
   <url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
   <launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
   <releases>
+    <release version="1.0.0" date="2019-11-01">
+      <description>
+        <p>
+          While we wait for Microsoft... Here we go, we are now version 1.0.0 🍾🎉
+
+          This release has been focus on fixing small issues, improving config options (specially for proxy),
+          adding some bots to help automation, adding more functionality to the right click button 
+          and automatically place your downloads into the download folder (opt in feature)
+        </p>
+        <ul>
+          <li>Adding electron dl to automatically place your dowloads into the dowload folder (opt-in feature, check the config options) (#295)</li>
+          <li>Enabling the right click on url and adding copy URL to that menu option (#294)</li>
+          <li>Add proxy server to config options to ease configuration (#292)</li>
+          <li>Adding the 'try-supported-channel-layouts' to avoid locking the audio on the 1st instance (#291)</li>
+          <li>Feature/fix anylint issues and close #272 (#288)</li>
+          <li>Bump eslint-utils from 1.3.1 to 1.4.2 (#287)</li>
+          <li>fix: enable meetups join also for https protocol links (#283)</li>
+          <li>Updating stale.yml</li>
+          <li>feat: add join meeting via link outside application (#255)</li>
+          <li>Feat adding snyk (#260)</li>
+          <li>Replacing depShield for snyk to check vulnerabilities (#259)</li>
+          <li>revert - Fix depshield issues (#258)</li>
+          <li>Fix depshield issues (#256)</li>
+          <li>Update README.md</li>
+          <li>Adding stale bot</li>
+          <li>Fix merge issue (#238)</li>
+        </ul>
+        <p>
+          Thanks to @standagh, @emanuelbatista, @jef79m and everybody that created issues/enhancements, fixed and/or tested them.
+
+          Special thanks to @julian-alarcon for continuously supporting the snap version of this project and to anyone else that is supporting other package types.
+
+          Thanks also to @byteSamurai for introducing hacktoverfest. I manage to get a t-shirt and to get a few people on my team to also contribute.
+
+          Its been a long ride, and looks like Microsoft has heard us out loud, but until they got something working as stable as this, I will continue contributing.
+
+          Release notes partly done by Stamp.
+        </p>
+      </description>
+    </release>
     <release version="0.7.0" date="2019-08-19">
       <description>
         <p>Because #217, you need to clear you config folder before your 1st login (config folder locations). This is not necessary if you are moving from version 0.6.6 or higher.</p>
