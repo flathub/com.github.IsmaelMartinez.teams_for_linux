@@ -1,8 +1,8 @@
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
-base-version: '19.08'
+base-version: '20.08'
 runtime: org.freedesktop.Platform
-runtime-version: '19.08'
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: teams-for-linux
 separate-locales: false
@@ -14,10 +14,6 @@ finish-args:
   - --share=network
   - --device=all
   - --filesystem=home
-  - --filesystem=xdg-run/dconf
-  - --filesystem=~/.config/dconf:ro
-  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
-  - --talk-name=ca.desrt.dconf
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=XDG_CURRENT_DESKTOP=Unity
@@ -26,12 +22,12 @@ modules:
   - name: teams-for-linux
     buildsystem: simple
     build-commands:
-      - ar x teams-for-linux_1.0.0_amd64.deb
+      - ar x teams-for-linux_1.0.6_amd64.deb
       - tar -xf data.tar.xz
       - cp -r ./opt/* /app/
       - cp -r ./usr/share/* /app/share/
       - ln -s /app/teams-for-linux/teams-for-linux /app/bin
-      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
+      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.metainfo.xml -t /app/share/metainfo
       - mv ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key Icon --set-value "com.github.IsmaelMartinez.teams_for_linux" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
@@ -39,7 +35,7 @@ modules:
       - find ${FLATPAK_DEST}/share/icons -type f -name *.png -exec rename teams-for-linux.png ${FLATPAK_ID}.png '{}' \;
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.0/teams-for-linux_1.0.0_amd64.deb
-        sha256: 7f82d79c50a4baad56dbf94f49dde33552ef195dc8e86288d95d2e75b3b457b9
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.6/teams-for-linux_1.0.6_amd64.deb
+        sha256: 34c7fba5646121aeefbfad6312f585cf678c8128b9d11f3b3bbd29d4aea48c34
       - type: file
-        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        path: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
