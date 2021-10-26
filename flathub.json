@@ -1,5 +1,3 @@
 {
-    "end-of-life": "The Flatpak for this unofficial Teams app is unmaintained",
-    "end-of-life-rebase": "com.microsoft.Teams",
     "only-arches": ["x86_64"]
 }

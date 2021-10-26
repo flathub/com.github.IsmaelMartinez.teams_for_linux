@@ -1,8 +1,8 @@
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
-base-version: '19.08'
+base-version: '21.08'
 runtime: org.freedesktop.Platform
-runtime-version: '19.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: teams-for-linux
 separate-locales: false
@@ -26,7 +26,7 @@ modules:
   - name: teams-for-linux
     buildsystem: simple
     build-commands:
-      - ar x teams-for-linux_1.0.0_amd64.deb
+      - ar x teams-for-linux_1.0.13_amd64.deb
       - tar -xf data.tar.xz
       - cp -r ./opt/* /app/
       - cp -r ./usr/share/* /app/share/
@@ -39,7 +39,7 @@ modules:
       - find ${FLATPAK_DEST}/share/icons -type f -name *.png -exec rename teams-for-linux.png ${FLATPAK_ID}.png '{}' \;
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.0/teams-for-linux_1.0.0_amd64.deb
-        sha256: 7f82d79c50a4baad56dbf94f49dde33552ef195dc8e86288d95d2e75b3b457b9
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.13/teams-for-linux_1.0.13_amd64.deb
+        sha256: 963c7daf2190fd10ba3b85e1989fbbe351567094f31988621ca0f43f037511ad
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
