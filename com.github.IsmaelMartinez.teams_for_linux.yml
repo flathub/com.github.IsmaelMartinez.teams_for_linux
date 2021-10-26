@@ -31,7 +31,7 @@ modules:
       - cp -r ./opt/* /app/
       - cp -r ./usr/share/* /app/share/
       - ln -s /app/teams-for-linux/teams-for-linux /app/bin
-      - chmod 4755 /app/teams-for-linux/chrome-sandbox
+      - awk -F: '{ print $1}' /etc/passwd
       - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
       - mv ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
