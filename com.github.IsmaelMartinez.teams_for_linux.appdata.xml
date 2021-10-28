@@ -18,7 +18,6 @@
 			<description>
 				<p>
 					Latest release is out!
-					Found any issue? log it here https://github.com/IsmaelMartinez/teams-for-linux/issues
 				</p>
 				<ul>
 					<li>Fix: #497 Flatpak install - Not launching from menu entry</li>
