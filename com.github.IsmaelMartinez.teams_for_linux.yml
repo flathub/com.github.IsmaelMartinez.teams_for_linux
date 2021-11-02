@@ -28,8 +28,8 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.19/teams-for-linux_1.0.19_amd64.deb
-        sha256: dac183091c7f09975ba1dc71ff334346a78d5ac0b690a674a9a546f3767c0289
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.20/teams-for-linux_1.0.20_amd64.deb
+        sha256: a244a41defd8f1fb35da6540414efdb02b9a7ade89487bc5dff20fb1f45a988e
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
       - type: script
@@ -38,7 +38,7 @@ modules:
           - zypak-wrapper.sh /app/teams-for-linux/teams-for-linux "$@"
 
     build-commands:
-      - ar x teams-for-linux_1.0.19_amd64.deb
+      - ar x teams-for-linux_1.0.20_amd64.deb
       - tar -xf data.tar.xz
       - cp -r ./opt/* /app/
       - cp -r ./usr/share/* /app/share/

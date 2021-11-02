@@ -14,6 +14,19 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.20" date="2021-11-02">
+			<description>
+				<p>
+					Fixes available in this build:
+				</p>
+				<ul>
+					<li>#447: Zoom resets to 100% on app close or refresh</li>
+				</ul>
+				<p>
+					Thanks @DiegoChajtur for reporting #447
+				</p>
+			</description>
+		</release>
 		<release version="1.0.19" date="2021-10-29">
 			<description>
 				<p>
