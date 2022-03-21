@@ -14,7 +14,14 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
-	<release version="1.0.23" date="2022-01-14">
+		<release version="1.0.24" date="2022-03-21">
+			<description>
+				<ul>
+					<li>Fix: #519 Black window on wayland</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.23" date="2022-01-14">
 			<description>
 				<p>
 					Fixes available in this build:
