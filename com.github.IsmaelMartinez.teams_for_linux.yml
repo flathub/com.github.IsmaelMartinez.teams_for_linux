@@ -4,7 +4,7 @@ base-version: '21.08'
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
-command: run.sh
+command: teams-for-linux
 separate-locales: false
 finish-args:
   - --share=ipc
@@ -23,6 +23,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.gtk.Notifications
   - --env=XDG_CURRENT_DESKTOP=Unity
+rename-desktop-file: teams-for-linux.desktop
+rename-icon: teams-for-linux
 modules:
   - name: teams-for-linux
     buildsystem: simple
@@ -30,24 +32,23 @@ modules:
     sources:
       - type: file
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.0.27/teams-for-linux_1.0.27_amd64.deb
-        sha256: dbd7d4beea1a7b253443250d5d080d58ed0d73594dc82389252074b1827486dd
+        sha256: b438731a66ac72be110ad0818cffab220b8c8107ea657f68e321f815d7f9e8ff
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
       - type: script
-        dest-filename: run.sh
+        dest-filename: teams-for-linux.sh
         commands:
-          - zypak-wrapper.sh /app/teams-for-linux/teams-for-linux "$@"
+          - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - exec zypak-wrapper /app/teams-for-linux/teams-for-linux "$@"
 
     build-commands:
-      - ar x teams-for-linux_1.0.27_amd64.deb
+      - ar x teams-for-linux_*.deb
+      - rm -f teams-for-linux_*.deb
       - tar -xf data.tar.xz
-      - cp -r ./opt/* /app/
-      - cp -r ./usr/share/* /app/share/
-      - ln -s /app/teams-for-linux/teams-for-linux /app/bin
-      - install -Dm644 com.github.IsmaelMartinez.teams_for_linux.appdata.xml -t /app/share/metainfo
-      - mv ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key Exec --set-value "run.sh teams-for-linux %U" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key Icon --set-value "com.github.IsmaelMartinez.teams_for_linux" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - rm -rf ${FLATPAK_DEST}/share/icons/hicolor/1024x1024/
-      - find ${FLATPAK_DEST}/share/icons -type f -name *.png -exec rename teams-for-linux.png ${FLATPAK_ID}.png '{}' \;
-      - install -Dm755 -t /app/bin/ run.sh
+      - rm -f control.tar.gz data.tar.xz debian-binary
+      - cp -r opt/* usr/* $FLATPAK_DEST
+      - rm -rf opt usr
+      - install teams-for-linux.sh $FLATPAK_DEST/bin/teams-for-linux
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.appdata.xml
+      - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop
+      - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"   
