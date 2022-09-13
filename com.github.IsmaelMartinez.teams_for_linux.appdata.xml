@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.36" date="2022-09-13">
+			<description>
+				<ul>
+					<li>Bumped org.freedesktop.Platform version to 22.08</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.35" date="2022-09-10">
 			<description>
 				<ul>
