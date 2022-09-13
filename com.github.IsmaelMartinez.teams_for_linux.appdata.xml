@@ -17,7 +17,8 @@
 		<release version="1.0.36" date="2022-09-13">
 			<description>
 				<ul>
-					<li>Bumped org.freedesktop.Platform version to 22.08</li>
+					<li>Fixed: No notification sound when installed through flatpak (569)</li>
+					<li>Bumped org.freedesktop.Platform version to 22.08 for better wayland support</li>
 				</ul>
 			</description>
 		</release>
