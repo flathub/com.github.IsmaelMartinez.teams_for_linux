@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.37" date="2022-09-14">
+			<description>
+				<ul>
+					<li>New: Command line argument --appLogLevels for controlling application logs. This can have values error, warn, info, debug. It can be single or multiple levels separated by comma. Default is error. Ex: --appLogLevels=error,warn</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.36" date="2022-09-13">
 			<description>
 				<ul>
