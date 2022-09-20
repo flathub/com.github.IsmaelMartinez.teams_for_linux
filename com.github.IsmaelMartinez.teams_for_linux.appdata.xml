@@ -315,6 +315,23 @@
 		</release>
 	</releases>
 	<developer_name>Ismael Martinez</developer_name>
+	<screenshots>
+		<screenshot type="default">
+			<image type="source">https://i.postimg.cc/MTLFwnw3/1.png</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://i.postimg.cc/3J2YLTCQ/2.png</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://i.postimg.cc/mgwRsy5d/3.png</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://i.postimg.cc/Qd0LPxFw/4.png</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://i.postimg.cc/8c2k7kRt/5.png</image>
+		</screenshot>
+	</screenshots>
 	<content_rating type="oars-1.0">
 		<content_attribute id="violence-cartoon">none</content_attribute>
 		<content_attribute id="violence-fantasy">none</content_attribute>
