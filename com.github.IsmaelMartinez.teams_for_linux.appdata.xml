@@ -14,6 +14,14 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.39" date="2022-09-26">
+			<description>
+				<ul>
+					<li>Fixed: Option closeAppOnCross not working (#602)</li>
+					<li>Update: Electron version upgraded to 20.2.0</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.38" date="2022-09-20">
 			<description>
 				<ul>
