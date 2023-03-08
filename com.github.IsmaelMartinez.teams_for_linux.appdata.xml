@@ -14,6 +14,14 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.52" date="2023-03-08">
+			<description>
+				<ul>
+					<li>Release to fix dependabot removing the "integration" section from the yarn.lock files</li>
+					<li>Bringing the multi account option to those who asked for it</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.50" date="2023-03-02">
 			<description>
 				<ul>
