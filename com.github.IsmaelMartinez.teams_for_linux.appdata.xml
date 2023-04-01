@@ -6,7 +6,7 @@
 	<name>teams-for-linux</name>
 	<summary>Unofficial Microsoft Teams client for Linux using Electron</summary>
 	<description>
-		<p>Unofficial Microsoft Teams client for Linux using Electron.</p> 
+		<p>Unofficial Microsoft Teams client for Linux using Electron.</p>
 		<p>It uses the Web App and wraps it as a standalone application using Electron.</p>
 	</description>
 	<url type="homepage">https://github.com/IsmaelMartinez/teams-for-linux</url>
@@ -14,7 +14,19 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
-	<release version="1.0.55" date="2023-03-22">
+		<release version="1.0.58" date="2023-04-01">
+			<description>
+				<ul>
+					<li>Fix: Click on link to external meetings is ignored</li>
+					<li>Fix: No longer able to open meeting invitations in app</li>
+					<li>Fix: Option for SSO Login Popups for certain Apps</li>
+					<li>Fix: The new-window event is deprecated and will be removed. Please use contents.setWindowOpenHandler() instead</li>
+					<li>New: Set default spellchecker language to en-US</li>
+					<li>New: Disable hardware media key handling</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.0.55" date="2023-03-22">
 			<description>
 				<ul>
 					<li>New command line option --disableNotificationSound</li>
