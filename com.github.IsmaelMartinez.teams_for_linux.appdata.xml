@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.59" date="2023-04-11">
+			<description>
+				<ul>
+					<li>Fix: Prevent screensaver while in call</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.58" date="2023-04-01">
 			<description>
 				<ul>
