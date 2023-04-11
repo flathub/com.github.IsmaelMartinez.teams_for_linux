@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.59-2" date="2023-04-11">
+			<description>
+				<ul>
+					<li>Added required permisions for inhibiting screen lock</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.59" date="2023-04-11">
 			<description>
 				<ul>
