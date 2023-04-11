@@ -22,6 +22,8 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.gtk.Notifications
+  - --talk-name=org.freedesktop.PowerManagement
+  - --talk-name=org.gnome.SessionManager
   - --env=XDG_CURRENT_DESKTOP=Unity
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
