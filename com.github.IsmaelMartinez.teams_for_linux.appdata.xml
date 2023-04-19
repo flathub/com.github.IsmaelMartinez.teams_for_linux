@@ -14,6 +14,15 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.68" date="2023-04-19">
+			<description>
+				<ul>
+					<li>New: Disable/Enable Notification Sound if not Available with --disableNotificationSoundIfNotAvailable flag</li>
+					<li>Fix: Teams gets unloaded after suspend</li>
+					<li>Minor code optimization</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.65" date="2023-04-16">
 			<description>
 				<ul>
