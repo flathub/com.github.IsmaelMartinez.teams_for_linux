@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.69" date="2023-04-21">
+			<description>
+				<ul>
+					<li>New: Disable all notifications with --disableNotifications flag</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.68" date="2023-04-19">
 			<description>
 				<ul>
