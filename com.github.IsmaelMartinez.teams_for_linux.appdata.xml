@@ -14,6 +14,14 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.74" date="2023-04-28">
+			<description>
+				<ul>
+					<li>New: Back/Forward navigation using keys</li>
+					<li>Fix: Now zoom in/out shortcuts work while on chat window</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.72" date="2023-04-26">
 			<description>
 				<ul>
