@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.78" date="2023-04-29">
+			<description>
+				<ul>
+					<li>New: Safely open links</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.77" date="2023-04-29">
 			<description>
 				<ul>
