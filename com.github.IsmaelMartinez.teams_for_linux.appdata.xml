@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.80" date="2023-04-30">
+			<description>
+				<ul>
+					<li>New: Removed menu bar from the popup windows</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.79" date="2023-04-30">
 			<description>
 				<ul>
