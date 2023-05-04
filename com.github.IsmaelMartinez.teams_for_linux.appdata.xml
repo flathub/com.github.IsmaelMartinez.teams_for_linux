@@ -14,6 +14,15 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.83" date="2023-05-04">
+			<description>
+				<ul>
+					<li>New: CTRL + Click for SSO login.</li>
+					<li>New: Settings menu entry with 'Save' and 'Restore'. Settings saved and restored are theme, chat density, devices.</li>
+					<li>New: Extended quit menu with 'Normally' and 'Clear Storage'. 'Normally' would be the default but 'Clear Storage' would give a fresh start on next launch.</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.80" date="2023-04-30">
 			<description>
 				<ul>
