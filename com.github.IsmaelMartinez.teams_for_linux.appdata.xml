@@ -14,6 +14,13 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.0.90" date="2023-05-16">
+			<description>
+				<ul>
+					<li>New: Code refactoring</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.0.88" date="2023-05-14">
 			<description>
 				<ul>
