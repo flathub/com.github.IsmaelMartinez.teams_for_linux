@@ -34,8 +34,8 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.1.7/teams-for-linux_1.1.7_amd64.deb
-        sha256: b0a215fa1ffa0f333106971f2d79848b547e6841ef9580e5a80432cbe5c4e793
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.1.8/teams-for-linux_1.1.8_amd64.deb
+        sha256: b760bea426cff140b9bee68db820616ba8af1d733635d5402b8e3473f2c2016e
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
       - type: script
