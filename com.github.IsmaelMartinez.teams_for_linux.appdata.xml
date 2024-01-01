@@ -14,6 +14,56 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.3.26" date="2023-12-17">
+			<description>
+				<ul>
+					<li>New: Make sure executable is writable before running fuses in afterpack script</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.25" date="2023-12-10">
+			<description>
+				<ul>
+					<li>Fix: Missing "Meeting started" notifications</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.24" date="2023-12-10">
+			<description>
+				<ul>
+					<li>New: Allow usage of arbitrary disable-features switch</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.23" date="2023-11-20">
+			<description>
+				<ul>
+					<li>New: Adds afterpack script to flip EnableCookieEncryption electron fuse</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.22" date="2023-11-17">
+			<description>
+				<ul>
+					<li>New: Increased node version in the runners</li>
+					<li>New: Enhanced zooming in and out controls</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.21" date="2023-11-14">
+			<description>
+				<ul>
+					<li>New: Added support for running custom scripts on events</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.3.20" date="2023-11-14">
+			<description>
+				<ul>
+					<li>Fix: Custom CSS does not work for Teams v2</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.3.19" date="2023-11-06">
 			<description>
 				<ul>

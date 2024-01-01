@@ -14,17 +14,14 @@ finish-args:
   - --share=network
   - --device=all
   - --filesystem=home
-  - --filesystem=xdg-run/dconf
-  - --filesystem=~/.config/dconf:ro
   - --filesystem=xdg-run/pipewire-0
-  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
-  - --talk-name=ca.desrt.dconf
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.freedesktop.portal.Background
   - --env=XDG_CURRENT_DESKTOP=Unity
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
@@ -34,8 +31,8 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.3.19/teams-for-linux_1.3.19_amd64.deb
-        sha256: 691a58bfca4f4dc37deac61cb3b7ab11087f29a5ef62dba745271fbdddc0ccfd
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.3.26/teams-for-linux_1.3.26_amd64.deb
+        sha256: e0fe5ba62d7605eaac3e3782807382fd1942585cbfc3dc5c28cb042d927553c7
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
       - type: script
