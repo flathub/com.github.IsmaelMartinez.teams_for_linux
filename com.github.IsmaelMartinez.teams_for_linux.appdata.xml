@@ -14,6 +14,20 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.4.3" date="2024-01-22">
+			<description>
+				<ul>
+					<li>New: Rework wayland screenshare source selection</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.2" date="2024-01-22">
+			<description>
+				<ul>
+					<li>Fix: Getting version from cli arg with yargs after the Electron 28 bump</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.1" date="2024-01-08">
 			<description>
 				<ul>
