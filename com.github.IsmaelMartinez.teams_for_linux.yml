@@ -21,7 +21,6 @@ finish-args:
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
-  - --talk-name=org.freedesktop.portal.Background
   - --env=XDG_CURRENT_DESKTOP=Unity
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
