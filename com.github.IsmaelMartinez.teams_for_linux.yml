@@ -22,6 +22,8 @@ finish-args:
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
   - --env=XDG_CURRENT_DESKTOP=Unity
+  # required to fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
 modules:
