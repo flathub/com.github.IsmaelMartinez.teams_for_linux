@@ -35,7 +35,7 @@ modules:
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.13/teams-for-linux_1.4.13_amd64.deb
         sha256: fa810fccec7d0bb0b5aa8bc404e76119b77b7e3dcb35e5715ed6dc95eba9ad3e
       - type: file
-        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
+        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
       - type: script
         dest-filename: teams-for-linux.sh
         commands:
@@ -52,4 +52,4 @@ modules:
       - install teams-for-linux.sh $FLATPAK_DEST/bin/teams-for-linux
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.appdata.xml
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop
-      - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"   
+      - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"
