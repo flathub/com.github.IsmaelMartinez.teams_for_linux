@@ -9,7 +9,7 @@ separate-locales: false
 finish-args:
   - --share=ipc
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --share=network
   - --device=all
@@ -22,6 +22,7 @@ finish-args:
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
   - --env=XDG_CURRENT_DESKTOP=Unity
+  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
   # required to fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 rename-desktop-file: teams-for-linux.desktop
