@@ -33,8 +33,14 @@ modules:
     sources:
       - type: file
         dest-filename: teams-for-linux.deb
+        only-arches: [x86_64]
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.25/teams-for-linux_1.4.25_amd64.deb
         sha256: be6827e77ad23b3b4a5c659a99b6aedd47bb180d3e19754e95709e74bb9136ab
+      - type: file
+        dest-filename: teams-for-linux.deb
+        only-arches: [aarch64]
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.21/teams-for-linux_1.4.21_arm64.deb
+        sha256: b1b5cf2f8a990f3db871346bb49e9f60862c6242039a7459febe7c405a7531ab
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
         url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.4.21/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
