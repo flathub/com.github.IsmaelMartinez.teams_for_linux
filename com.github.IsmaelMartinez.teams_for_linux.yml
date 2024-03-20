@@ -32,6 +32,7 @@ modules:
 
     sources:
       - type: file
+        dest-filename: teams-for-linux.deb
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.25/teams-for-linux_1.4.25_amd64.deb
         sha256: be6827e77ad23b3b4a5c659a99b6aedd47bb180d3e19754e95709e74bb9136ab
       - type: file
@@ -43,8 +44,8 @@ modules:
           - exec zypak-wrapper /app/teams-for-linux/teams-for-linux "$@"
 
     build-commands:
-      - ar x teams-for-linux_*.deb
-      - rm -f teams-for-linux_*.deb
+      - ar x teams-for-linux.deb
+      - rm -f teams-for-linux.deb
       - tar -xf data.tar.xz
       - rm -f control.tar.gz data.tar.xz debian-binary
       - cp -r opt/* usr/* $FLATPAK_DEST
