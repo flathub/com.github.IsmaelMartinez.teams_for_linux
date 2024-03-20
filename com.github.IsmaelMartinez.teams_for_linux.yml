@@ -36,15 +36,38 @@ modules:
         only-arches: [x86_64]
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.13/teams-for-linux_1.4.13_amd64.deb
         sha256: fa810fccec7d0bb0b5aa8bc404e76119b77b7e3dcb35e5715ed6dc95eba9ad3e
+        x-checker-data:
+          is-main-source: true
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_amd64.deb"))) | first
+
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [aarch64]
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.13/teams-for-linux_1.4.13_arm64.deb
         sha256: 26049f042c46f2a046f7a430e7d9466a721a09c3bd6d5df01e4b0c4c652b4a94
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_arm64.deb"))) | first
+
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
         url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.4.13/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
         sha256: 466e7f58c254197e71a4c33c56272463a046c08482d5557a108265273d736c94
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          tag-query: .tag_name
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: '"https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/" + $tag + "/com.github.IsmaelMartinez.teams_for_linux.appdata.xml"'
+
       - type: script
         dest-filename: teams-for-linux.sh
         commands:
