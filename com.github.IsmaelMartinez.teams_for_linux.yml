@@ -36,15 +36,38 @@ modules:
         only-arches: [x86_64]
         url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.25/teams-for-linux_1.4.25_amd64.deb
         sha256: be6827e77ad23b3b4a5c659a99b6aedd47bb180d3e19754e95709e74bb9136ab
+        x-checker-data:
+          is-main-source: true
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_amd64.deb"))) | first
+
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [aarch64]
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.21/teams-for-linux_1.4.21_arm64.deb
-        sha256: b1b5cf2f8a990f3db871346bb49e9f60862c6242039a7459febe7c405a7531ab
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.25/teams-for-linux_1.4.25_arm64.deb
+        sha256: fbc49b3c61e4249dd4f654a0783913ffae4929dc5e9442ccd215489607a6ad79
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_arm64.deb"))) | first
+
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
-        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.4.21/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
-        sha256: 1e04a8b9957122fd702b29e6db6e643e3b50fdf489f040752d7b913a7783003c
+        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.4.25/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        sha256: 820e6f635f4d195938680b4612e29fba25529d2d1d3bcb2c03082158367faad7
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          tag-query: .tag_name
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: '"https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/" + $tag + "/com.github.IsmaelMartinez.teams_for_linux.appdata.xml"'
+
       - type: script
         dest-filename: teams-for-linux.sh
         commands:
