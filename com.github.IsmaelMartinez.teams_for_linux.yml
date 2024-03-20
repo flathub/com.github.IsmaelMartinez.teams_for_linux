@@ -37,7 +37,8 @@ modules:
         sha256: fa810fccec7d0bb0b5aa8bc404e76119b77b7e3dcb35e5715ed6dc95eba9ad3e
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
-        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.4.13/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        sha256: 466e7f58c254197e71a4c33c56272463a046c08482d5557a108265273d736c94
       - type: script
         dest-filename: teams-for-linux.sh
         commands:
