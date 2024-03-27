@@ -14,6 +14,23 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.4.15" date="2024-03-26">
+			<description>
+				<ul>
+					<li>Added bail out logic to the angular detection as this is
+					creating some memory issues in some users.</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.14" date="2024-03-11">
+			<description>
+				<ul>
+					<li>Electron version upgraded to 29.1.1 by @jijojosephk</li>
+					<li>Fix: #1137 reported by @dschrempf</li>
+					<li>Updated documentation by @andreaippo</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.13" date="2024-03-04">
 			<description>
 				<ul>
