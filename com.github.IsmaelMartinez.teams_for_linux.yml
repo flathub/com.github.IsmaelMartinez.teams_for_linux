@@ -1,8 +1,8 @@
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '23.08'
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: teams-for-linux
 separate-locales: false
@@ -32,8 +32,8 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.13/teams-for-linux_1.4.13_amd64.deb
-        sha256: fa810fccec7d0bb0b5aa8bc404e76119b77b7e3dcb35e5715ed6dc95eba9ad3e
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.16/teams-for-linux_1.4.16_amd64.deb
+        sha256: 8507a00f3a562abafa8382d235027eb361fb0464ae01db242266e17e226cd968
       - type: file
         path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
       - type: script

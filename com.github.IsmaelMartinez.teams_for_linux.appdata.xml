@@ -14,6 +14,27 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.4.16" date="2024-03-31">
+			<description>
+				<ul>
+					<li>New: Basic support for teams v2</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.15" date="2024-03-24">
+			<description>
+				<ul>
+					<li>Fix: Increased memory consumption when teams v2 is loaded</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.14" date="2024-03-17">
+			<description>
+				<ul>
+					<li>New: Electron version upgraded to 29.1.1</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.13" date="2024-03-04">
 			<description>
 				<ul>
