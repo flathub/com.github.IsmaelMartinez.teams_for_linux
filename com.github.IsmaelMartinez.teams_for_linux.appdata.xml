@@ -14,6 +14,34 @@
 	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
 	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
 	<releases>
+		<release version="1.4.21" date="2024-04-07">
+			<description>
+				<ul>
+					<li>Electron version upgraded to 29.2.0</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.20" date="2024-04-06">
+			<description>
+				<ul>
+					<li>Now the notification badge count clears when all are read</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.19" date="2024-04-05">
+			<description>
+				<ul>
+					<li>Feature/teams v2 activityhub changes</li>
+				</ul>
+			</description>
+		</release>
+		<release version="1.4.18" date="2024-04-05">
+			<description>
+				<ul>
+					<li>Feature/teams v2 changes theme</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.4.17" date="2024-04-04">
 			<description>
 				<ul>
