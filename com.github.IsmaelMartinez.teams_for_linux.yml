@@ -34,8 +34,8 @@ modules:
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [x86_64]
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.0/teams-for-linux_1.11.0_amd64.deb
-        sha256: 9ef25a7cd1104e7e5b3aeddefbb1797d97b9542ffcc80c1ebbfc8d183581c72c
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.1/teams-for-linux_1.11.1_amd64.deb
+        sha256: d381c92baf6b202b0bdd5e7267596752f0ba2fca8f5139258e7dac9b37a1d569
         x-checker-data:
           is-main-source: true
           type: json
@@ -47,8 +47,8 @@ modules:
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [aarch64]
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.0/teams-for-linux_1.11.0_arm64.deb
-        sha256: 03b12629de6820f25c84aee8ac96bd69a296fb073b535109865462b7329a5744
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.1/teams-for-linux_1.11.1_arm64.deb
+        sha256: c68599c948715e6cfa8ba5aba0c1ecdb85cf6368d020c110b2c4f0afcc3a7ce0
         x-checker-data:
           type: json
           url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
@@ -58,8 +58,8 @@ modules:
 
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
-        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.11.0/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
-        sha256: 5cdb049ee94babdd2c74ebad8c45da8a6ba912214b24a59da6ad79ccff68fc3d
+        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.11.1/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        sha256: cae73ade9970d49652f382d733c7e2ff00914bbcda308860aa59194d11b890c8
         x-checker-data:
           type: json
           url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
