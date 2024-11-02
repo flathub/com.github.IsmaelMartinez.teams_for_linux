@@ -33,10 +33,42 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.4.17/teams-for-linux_1.4.17_amd64.deb
-        sha256: 83f173e1bf7f4cc63e8d398177b7a07e038a4c3788d326a444e64b8d26711d73
+        dest-filename: teams-for-linux.deb
+        only-arches: [x86_64]
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.2/teams-for-linux_1.11.2_amd64.deb
+        sha256: 844273c7d2226bf475689eff0b483573727ecc072ec83c5b09be84105acb09c4
+        x-checker-data:
+          is-main-source: true
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_amd64.deb"))) | first
+
       - type: file
-        path: com.github.IsmaelMartinez.teams_for_linux.appdata.xml      
+        dest-filename: teams-for-linux.deb
+        only-arches: [aarch64]
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.11.2/teams-for-linux_1.11.2_arm64.deb
+        sha256: 0f9cee9589a636b6ce73ac0eefa9778eb61201ebee014824ecab33142fabdaf5
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: .assets | map(.browser_download_url | select(endswith("_arm64.deb"))) | first
+
+      - type: file
+        dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
+        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v1.11.2/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        sha256: 3322f00044177288d499f340da9ddb154eeb416c278a574a975fe9811184b0c1
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+          tag-query: .tag_name
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: '"https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/" + $tag + "/com.github.IsmaelMartinez.teams_for_linux.appdata.xml"'
+
       - type: script
         dest-filename: teams-for-linux.sh
         commands:
@@ -44,13 +76,13 @@ modules:
           - exec zypak-wrapper /app/teams-for-linux/teams-for-linux "$@"
 
     build-commands:
-      - ar x teams-for-linux_*.deb
-      - rm -f teams-for-linux_*.deb
+      - ar x teams-for-linux.deb
+      - rm -f teams-for-linux.deb
       - tar -xf data.tar.xz
       - rm -f control.tar.gz data.tar.xz debian-binary
       - cp -r opt/* usr/* $FLATPAK_DEST
       - rm -rf opt usr
       - install teams-for-linux.sh $FLATPAK_DEST/bin/teams-for-linux
-      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.appdata.xml
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop
-      - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"   
+      - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"
