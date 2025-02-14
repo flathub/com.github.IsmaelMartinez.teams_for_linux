@@ -1,8 +1,8 @@
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
-base-version: '23.08'
+base-version: '24.08'
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: teams-for-linux
 separate-locales: false
