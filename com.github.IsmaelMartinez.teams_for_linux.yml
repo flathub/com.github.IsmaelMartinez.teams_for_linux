@@ -25,7 +25,6 @@ finish-args:
   # app's suspend/resume handlers never fire without this.
   - --system-talk-name=org.freedesktop.login1
   - --env=XDG_CURRENT_DESKTOP=Unity
-  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
   # required to fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 rename-desktop-file: teams-for-linux.desktop
