@@ -23,6 +23,9 @@ finish-args:
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
+  # Electron's powerMonitor watches PrepareForSleep on the system bus, so the
+  # app's suspend/resume handlers never fire without this.
+  - --system-talk-name=org.freedesktop.login1
   - --env=XDG_CURRENT_DESKTOP=Unity
   # required to fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
