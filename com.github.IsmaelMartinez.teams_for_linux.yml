@@ -85,6 +85,10 @@ modules:
       - install teams-for-linux.sh $FLATPAK_DEST/bin/teams-for-linux
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml
       - desktop-file-edit --set-key Exec --set-value "teams-for-linux %U" ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop
+      # patch-electron-desktop-filename below makes the app report the app id as its
+      # X11 WM_CLASS, so the desktop entry has to match or docks cannot associate the
+      # running window with its launcher
+      - desktop-file-edit --set-key StartupWMClass --set-value "com.github.IsmaelMartinez.teams_for_linux" ${FLATPAK_DEST}/share/applications/teams-for-linux.desktop
       # required for wayland, cf. https://docs.flatpak.org/en/latest/electron.html#using-correct-desktop-file-name
       - patch-electron-desktop-filename ${FLATPAK_DEST}/teams-for-linux/resources/app.asar
       - rm -rf "${FLATPAK_DEST}/share/icons/hicolor/1024x1024/"
