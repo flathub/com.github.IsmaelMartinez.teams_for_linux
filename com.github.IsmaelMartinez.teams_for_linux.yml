@@ -9,7 +9,9 @@ separate-locales: false
 finish-args:
   - --share=ipc
   - --socket=wayland
-  - --socket=fallback-x11
+  # x11, not fallback-x11: the wrapper forces --ozone-platform=x11, so the X11
+  # socket is needed on Wayland sessions too, where fallback-x11 withholds it.
+  - --socket=x11
   - --socket=pulseaudio
   - --share=network
   - --device=all
@@ -22,7 +24,6 @@ finish-args:
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
   - --env=XDG_CURRENT_DESKTOP=Unity
-  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
   # required to fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 rename-desktop-file: teams-for-linux.desktop
@@ -73,7 +74,10 @@ modules:
         dest-filename: teams-for-linux.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
-          - exec zypak-wrapper /app/teams-for-linux/teams-for-linux "$@"
+          # Matches upstream's linux.executableArgs, which every other package
+          # gets from electron-builder. desktop-file-edit below rewrites the Exec
+          # line and drops it. Before "$@" so users can still override it.
+          - exec zypak-wrapper /app/teams-for-linux/teams-for-linux --ozone-platform=x11 "$@"
 
     build-commands:
       - ar x teams-for-linux.deb
