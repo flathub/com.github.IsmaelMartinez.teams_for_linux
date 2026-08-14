@@ -8,9 +8,15 @@
 # changes (sandbox permissions, wrapper flags) go for real-world testing, since
 # the maintainer has no Linux desktop to verify them on.
 #
-# The only intended difference from `master` is the x-checker-data queries
-# below, which follow the newest release including pre-releases. Keep every
-# other change in sync with `master` unless it is deliberately under test here.
+# Bumping this branch is MANUAL. Flathub's hosted update checker only runs
+# against a repo's default branch (`master`), so flathubbot never touches this
+# one. The x-checker-data queries below describe what the branch should track,
+# and would be correct if the checker were ever pointed at it, but nothing
+# executes them today. The runbook is in the app repo, under
+# docs-site/docs/development/manual-release-process.md ("Flathub beta branch").
+#
+# Keep every other change in sync with `master` unless it is deliberately
+# under test here.
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
 base-version: '25.08'
