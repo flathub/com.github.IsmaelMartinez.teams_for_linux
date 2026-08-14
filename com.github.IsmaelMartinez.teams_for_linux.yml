@@ -1,3 +1,16 @@
+# This is the `beta` branch. Flathub builds it into the flathub-beta remote,
+# separately from `master`, which feeds the stable remote.
+#
+# It exists because the app's release process publishes a pre-release first and
+# promotes it to stable only after it has soaked. `master` tracks
+# `releases/latest`, which by definition skips pre-releases, so without this
+# branch Flatpak users can never test one. It is also where riskier packaging
+# changes (sandbox permissions, wrapper flags) go for real-world testing, since
+# the maintainer has no Linux desktop to verify them on.
+#
+# The only intended difference from `master` is the x-checker-data queries
+# below, which follow the newest release including pre-releases. Keep every
+# other change in sync with `master` unless it is deliberately under test here.
 app-id: com.github.IsmaelMartinez.teams_for_linux
 base: org.electronjs.Electron2.BaseApp
 base-version: '25.08'
@@ -37,38 +50,42 @@ modules:
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [x86_64]
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.14.1/teams-for-linux_2.14.1_amd64.deb
-        sha256: c65281d7991d8cec60903d852e5b2a8d8b831d6f7dd032ea7f6b63030aa7a504
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.15.0/teams-for-linux_2.15.0_amd64.deb
+        sha256: 1277cf19fb11aeb756412093fd6bd92fcaa7f7a96cec4f49e6db257ecaed5ab8
         x-checker-data:
           is-main-source: true
           type: json
-          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
-          url-query: .assets | map(.browser_download_url | select(endswith("_amd64.deb"))) | first
+          # The list endpoint, not /latest: /latest excludes pre-releases, which
+          # are exactly what this branch is for. Entries come back newest first,
+          # and drafts are filtered out explicitly rather than relying on the
+          # API omitting them for unauthenticated callers.
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases
+          version-query: '[.[] | select(.draft | not)][0].tag_name | sub("^v"; "")'
+          timestamp-query: '[.[] | select(.draft | not)][0].published_at'
+          url-query: '[.[] | select(.draft | not)][0].assets | map(.browser_download_url | select(endswith("_amd64.deb"))) | first'
 
       - type: file
         dest-filename: teams-for-linux.deb
         only-arches: [aarch64]
-        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.14.1/teams-for-linux_2.14.1_arm64.deb
-        sha256: 442b2e32ca03018af007df5fefdd0156bbfdede76b3454445f316a108635cb1c
+        url: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.15.0/teams-for-linux_2.15.0_arm64.deb
+        sha256: 4bc5f2f38bbe4a81a97ad91e4055d9ffd3d78c6bffce019a460407d2461aac24
         x-checker-data:
           type: json
-          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
-          url-query: .assets | map(.browser_download_url | select(endswith("_arm64.deb"))) | first
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases
+          version-query: '[.[] | select(.draft | not)][0].tag_name | sub("^v"; "")'
+          timestamp-query: '[.[] | select(.draft | not)][0].published_at'
+          url-query: '[.[] | select(.draft | not)][0].assets | map(.browser_download_url | select(endswith("_arm64.deb"))) | first'
 
       - type: file
         dest-filename: com.github.IsmaelMartinez.teams_for_linux.metainfo.xml
-        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v2.14.1/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
-        sha256: 53488b26e4498af9e8557cfb2e239b3c2820cf7e7a87834d115a99c74df9d54a
+        url: https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/v2.15.0/com.github.IsmaelMartinez.teams_for_linux.appdata.xml
+        sha256: 20d62b77c132f2509958446d0bc399ad2b8568d8af05cb7fc52b7c06cb3632b9
         x-checker-data:
           type: json
-          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
-          tag-query: .tag_name
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
+          url: https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases
+          tag-query: '[.[] | select(.draft | not)][0].tag_name'
+          version-query: '[.[] | select(.draft | not)][0].tag_name | sub("^v"; "")'
+          timestamp-query: '[.[] | select(.draft | not)][0].published_at'
           url-query: '"https://raw.githubusercontent.com/IsmaelMartinez/teams-for-linux/" + $tag + "/com.github.IsmaelMartinez.teams_for_linux.appdata.xml"'
 
       - type: script
