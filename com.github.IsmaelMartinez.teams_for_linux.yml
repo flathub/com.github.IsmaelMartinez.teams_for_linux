@@ -21,6 +21,10 @@ finish-args:
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.gtk.Notifications
   - --talk-name=org.gnome.SessionManager
+  # Electron 42 sets the taskbar badge through libunity, which only emits
+  # LauncherEntry.Update after it has seen this name on the session bus. The
+  # sandbox hides the name otherwise, so app.setBadgeCount silently does nothing.
+  - --talk-name=com.canonical.Unity
   # Electron's powerMonitor watches PrepareForSleep on the system bus, so the
   # app's suspend/resume handlers never fire without this.
   - --system-talk-name=org.freedesktop.login1
