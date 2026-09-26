@@ -34,9 +34,7 @@ finish-args:
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
 modules:
-  # The app's opt-in FIDO2 support (auth.webauthn.enabled) shells out to
-  # fido2-cred, fido2-assert and fido2-token on PATH, and the sandbox cannot
-  # reach the host copies, so libfido2 and its tools are bundled here.
+  # fido2 tools for auth.webauthn.enabled; the sandbox cannot reach the host ones
   - name: libcbor
     buildsystem: cmake-ninja
     config-opts:
