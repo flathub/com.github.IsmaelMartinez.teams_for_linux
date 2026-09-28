@@ -53,6 +53,46 @@ finish-args:
 rename-desktop-file: teams-for-linux.desktop
 rename-icon: teams-for-linux
 modules:
+  # fido2 tools for auth.webauthn.enabled; the sandbox cannot reach the host ones
+  - name: libcbor
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DBUILD_SHARED_LIBS=ON
+    cleanup:
+      - /include
+      - /lib/pkgconfig
+      - /lib/cmake
+      - /lib/*.a
+    sources:
+      - type: git
+        url: https://github.com/PJK/libcbor.git
+        tag: v0.14.0
+        commit: 6730c20ab487c0b4dc5fb3fea918937085355bac
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+
+  - name: libfido2
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DBUILD_TOOLS=ON
+      - -DBUILD_TESTS=OFF
+      - -DBUILD_EXAMPLES=OFF
+      - -DBUILD_MANPAGES=OFF
+      - -DBUILD_STATIC_LIBS=OFF
+    cleanup:
+      - /include
+      - /lib/pkgconfig
+      - /lib/cmake
+    sources:
+      - type: git
+        url: https://github.com/Yubico/libfido2.git
+        tag: 1.17.0
+        commit: b974e7cf2ee7392134cc12c08b76a068cf250dd8
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
+
   - name: teams-for-linux
     buildsystem: simple
 
