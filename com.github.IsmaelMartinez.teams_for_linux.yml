@@ -47,8 +47,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/PJK/libcbor.git
-        tag: v0.14.1
-        commit: 4218162778124ab87b108bac3456aecd6d9d1938
+        tag: v0.15.0
+        commit: cf5bd4bd293ce730b9455fa9cd822166c3dc4599
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
